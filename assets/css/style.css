@@ -1,0 +1,49 @@
+*{
+    box-sizing: border-box;
+    
+}
+body{
+    background-color: #a2faff;
+    color: #ff1674;
+    font-size: 20px;
+    font-weight: 700;
+    
+}
+#img-contain img{
+    max-width:100%;
+    width: 300px;
+    height: 250px;
+}
+#funny-img{
+    width: 350px;
+    height: 300px;
+    position: absolute;
+    right:120px;
+    top:-20px;
+}
+form{
+    padding-left:10px;
+    padding-top:40px;
+}
+button{
+    background-color: #ff1674 !important;
+    color: #a2ffdd !important;
+    font-weight:700;
+}
+#button-content{
+    position: relative;
+}
+#btn-content button{
+    /*pink buttons #ff1674 */
+    /*font color inside pink  a2ffdd */
+    margin-top:30px;
+    margin-right: 30px;
+}
+#form-content{
+    width:20%;
+}
+#gif-content{
+    width:70%;
+    
+}
+
