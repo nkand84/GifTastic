@@ -96,9 +96,16 @@ button{
     margin-bottom:20px;
 }
 #special{
-    padding-left:60px;
+    padding-left:180px;
 }
-
+#special1{
+    padding-left:150px;
+}
+@media (max-width:768px){
+    #special{
+        margin-top:50px;
+    }
+}
 @media (max-width:575px) and (min-width:200px) {
   
     /* images to occupy half screen size each */

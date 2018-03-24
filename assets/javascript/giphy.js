@@ -1,5 +1,5 @@
 $(document).ready(function () {
-
+    $("#count-down").show();
     var topics = ["Pizza","Burger", "Cheese", "Ice Cream", "Fries","Chocolate"];
     var queryURL;
 
@@ -24,6 +24,7 @@ $(document).ready(function () {
 
     $("#btn-submit").on("click", function (event) {
         $("#count-down").hide();
+        // $("#hide-gif").show();
         // event.preventDefault() prevents submit button from trying to send a form.
         event.preventDefault();
         // Write code to grab the text the user types into the input field
