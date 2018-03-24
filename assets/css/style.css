@@ -74,8 +74,13 @@ button{
     margin-top:20px;
     border-radius:5px;
 }
+#gif-content div #count-down{
+    width:700px;
+    height:500px;
+    margin-bottom:40px;
+}
 #mar-down{
-    margin-bottom:60px;
+    margin-bottom:80px;
 }
 #gif-content div{
     width:200px;
@@ -84,4 +89,6 @@ button{
     margin-right:20px;
     margin-bottom:20px;
 }
-
+#special{
+    padding-left:80px;
+}

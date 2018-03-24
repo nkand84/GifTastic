@@ -1,5 +1,5 @@
 $(document).ready(function () {
-
+    
     var topics = ["Pizza", "Burger", "Cheese", "Ice Cream", "Fries", "Chocolate"];
     var queryURL;
     function renderButtons() {
@@ -12,6 +12,7 @@ $(document).ready(function () {
             buttons.appendTo('#btn-content');
         }
         $(".btn").on("click", function () {
+            $("#count-down").hide();
             var food = $(this).attr("data-food");
             console.log(food);
             queryURL = "https://api.giphy.com/v1/gifs/search?api_key=RFWOSVnoiyhhdqyGIIT8yn5LB0kin2Gn&q=" + food + "&limit=10&offset=0&rating=PG-13&lang=en";
@@ -19,6 +20,7 @@ $(document).ready(function () {
         });
     };
     $("#btn-submit").on("click", function (event) {
+        $("#count-down").hide();
         // event.preventDefault() prevents submit button from trying to send a form.
         event.preventDefault();
         // Write code to grab the text the user types into the input field
@@ -64,4 +66,5 @@ $(document).ready(function () {
             }
         });
     };
+    
 });
