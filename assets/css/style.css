@@ -80,6 +80,7 @@ button{
 }
 
 #gif-content div #count-down{
+ 
     width:700px;
     height:500px;
     margin-bottom:40px;
@@ -97,3 +98,31 @@ button{
 #special{
     padding-left:60px;
 }
+
+@media (max-width:575px) and (min-width:200px) {
+  
+    /* images to occupy half screen size each */
+    #eat-me{
+        max-width:100%;
+        height:auto;
+        
+    }
+    #funny-img{
+        display:none;
+    }
+    /* buttons to take 100% screen width */
+    #btn-content{
+        width:100%;
+    }
+    /* form takes 100% */
+    #form-content{
+        width:100%;
+    }
+    #special{
+        margin-top:50px;
+    }
+    /* gif content takes 100% */
+    #gif-content,#count-down{
+        width:100%;
+    }
+  }

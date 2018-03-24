@@ -1,7 +1,8 @@
 $(document).ready(function () {
-    
-    var topics = ["Pizza", "Burger", "Cheese", "Ice Cream", "Fries", "Chocolate"];
+
+    var topics = ["Pizza","Burger", "Cheese", "Ice Cream", "Fries","Chocolate"];
     var queryURL;
+
     function renderButtons() {
 
         $("#btn-content").empty();
@@ -11,6 +12,7 @@ $(document).ready(function () {
             buttons.attr("data-food", topics[i]);
             buttons.appendTo('#btn-content');
         }
+
         $(".btn").on("click", function () {
             $("#count-down").hide();
             var food = $(this).attr("data-food");
@@ -19,6 +21,7 @@ $(document).ready(function () {
             ajaxCall();
         });
     };
+
     $("#btn-submit").on("click", function (event) {
         $("#count-down").hide();
         // event.preventDefault() prevents submit button from trying to send a form.
@@ -34,11 +37,11 @@ $(document).ready(function () {
         $("#food-more").val('');
         queryURL = "https://api.giphy.com/v1/gifs/search?api_key=RFWOSVnoiyhhdqyGIIT8yn5LB0kin2Gn&q=" + foodInput + "&limit=10&offset=0&rating=PG-13&lang=en";
         ajaxCall();
-        console.log(queryURL);
-        
-    });    
-        renderButtons();
-   
+
+    });
+
+    renderButtons();
+
     // AJAX request function
     function ajaxCall() {
         // empties the gifs before each button is clicked
@@ -57,14 +60,33 @@ $(document).ready(function () {
                 // Set the inner text of the paragraph to the rating of the image 
                 p.text(results[i].rating);
                 // Make an image tag with 
-                var foodImage = $("<img>");
+                var foodImage = $("<img class='gif'>");
                 // Set the image's src 
-                foodImage.attr("src", results[i].images.fixed_height.url);
+                foodImage.attr("src", results[i].images.fixed_height_still.url);
+                // two more attributes data-still and data-animate
+                foodImage.attr("data-state", "still");
+                foodImage.attr("data-still", results[i].images.fixed_height_still.url);
+                foodImage.attr("data-animate", results[i].images.fixed_height.url);
                 foodDiv.append(foodImage);
                 foodDiv.append(p);
                 $("#gif-content").prepend(foodDiv);
             }
+            // pausing gifs on click
+            $(".gif").on("click", function () {
+                var state = $(this).attr("data-state");
+                console.log(state);
+                if (state == "still") {
+                    var animateGif = $(this).attr("data-animate");
+                    $(this).attr("src", animateGif);
+                    $(this).attr("data-state", "animate");
+                }
+                if (state == "animate") {
+                    $(this).attr("src", $(this).attr("data-still"));
+                    $(this).attr("data-state", "still");
+                }
+            });
         });
     };
-    
+
+
 });
