@@ -11,6 +11,7 @@ body{
     font-weight: 700;
     
 }
+/*----------------------------------- IMAGES----------------------------------------- */
 #img-contain img{
     max-width:100%;
     width: 300px;
@@ -28,10 +29,22 @@ body{
     right:120px;
     top:-20px;
 }
+#gif-content img{
+    width:200px;
+    height:150px;   
+    border: 3px solid #ff1674; 
+    margin-top:20px;
+    border-radius:5px;
+}
+/* -------------------------------FORM-------------------------------------------- */
 form{
     padding-left:10px;
     padding-top:60px;
 }
+#form-content{
+    width:20%;
+}
+/* -----------------------------BUTTONS--------------------------------------------- */
 button{
     background-color: #ff1674 !important;
     color: #a2ffdd !important;
@@ -52,9 +65,7 @@ button{
     margin-top:30px;
     margin-right: 30px;
 }
-#form-content{
-    width:20%;
-}
+/* ------------------------------------CONTENT AREA--DIVS and P------------------------------------------ */
 .style-p{
     background-color: #ff1674;
     border-radius:5px;
@@ -67,13 +78,7 @@ button{
     height: auto;
     
 }
-#gif-content img{
-    width:200px;
-    height:150px;   
-    border: 3px solid #ff1674; 
-    margin-top:20px;
-    border-radius:5px;
-}
+
 #gif-content div #count-down{
     width:700px;
     height:500px;
@@ -90,5 +95,5 @@ button{
     margin-bottom:20px;
 }
 #special{
-    padding-left:80px;
+    padding-left:60px;
 }
