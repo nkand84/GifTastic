@@ -1,3 +1,5 @@
+/* COLORS BGCOLOR: #a2faff; COLOR:#ff1674;  */
+
 *{
     box-sizing: border-box;
     
@@ -14,6 +16,11 @@ body{
     width: 300px;
     height: 250px;
 }
+#bottom-img{
+    width: 250px;
+    height:180px;
+    background-color: transparent;
+}
 #funny-img{
     width: 350px;
     height: 300px;
@@ -23,15 +30,21 @@ body{
 }
 form{
     padding-left:10px;
-    padding-top:40px;
+    padding-top:60px;
 }
 button{
     background-color: #ff1674 !important;
     color: #a2ffdd !important;
-    font-weight:700;
+    /* font-weight:700; */
 }
 #button-content{
     position: relative;
+}
+#btn-submit{
+    border:0;
+    padding:8px;
+    border-radius:10px;
+    width:100px;
 }
 #btn-content button{
     /*pink buttons #ff1674 */
@@ -42,8 +55,33 @@ button{
 #form-content{
     width:20%;
 }
+.style-p{
+    background-color: #ff1674;
+    border-radius:5px;
+    color:#fff;
+
+}
+
 #gif-content{
     width:70%;
+    height: auto;
     
+}
+#gif-content img{
+    width:200px;
+    height:150px;   
+    border: 3px solid #ff1674; 
+    margin-top:20px;
+    border-radius:5px;
+}
+#mar-down{
+    margin-bottom:60px;
+}
+#gif-content div{
+    width:200px;
+    height:150px;
+    display: inline-block;
+    margin-right:20px;
+    margin-bottom:20px;
 }
 
