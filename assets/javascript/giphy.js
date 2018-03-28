@@ -24,12 +24,10 @@ $(document).ready(function () {
 
     $("#btn-submit").on("click", function (event) {
         $("#count-down").hide();
-        // $("#hide-gif").show();
-        // event.preventDefault() prevents submit button from trying to send a form.
+       // event.preventDefault() prevents submit button from trying to send a form.
         event.preventDefault();
         // Write code to grab the text the user types into the input field
         var foodInput = $("#food-more").val();
-        console.log(foodInput);
         // Write code to add the new food option into the topics array
         topics.push(foodInput);
         // The renderButtons function is called, rendering the list of food buttons
@@ -51,7 +49,6 @@ $(document).ready(function () {
             url: queryURL,
             method: "GET"
         }).then(function (response) {
-            console.log(response);
             var results = response.data;
             for (var i = 0; i < results.length; i++) {
                 // Make a div 
@@ -63,11 +60,13 @@ $(document).ready(function () {
                 // Make an image tag with 
                 var foodImage = $("<img class='gif'>");
                 // Set the image's src 
-                foodImage.attr("src", results[i].images.fixed_height_still.url);
-                // two more attributes data-still and data-animate
-                foodImage.attr("data-state", "still");
-                foodImage.attr("data-still", results[i].images.fixed_height_still.url);
-                foodImage.attr("data-animate", results[i].images.fixed_height.url);
+                 // two more attributes data-still and data-animate
+                foodImage.attr({
+                    'src': results[i].images.fixed_height_still.url,
+                    'data-state': 'still',
+                    'data-still': results[i].images.fixed_height_still.url,
+                    'data-animate' : results[i].images.fixed_height.url
+                });
                 foodDiv.append(foodImage);
                 foodDiv.append(p);
                 $("#gif-content").prepend(foodDiv);
@@ -75,7 +74,6 @@ $(document).ready(function () {
             // pausing gifs on click
             $(".gif").on("click", function () {
                 var state = $(this).attr("data-state");
-                console.log(state);
                 if (state == "still") {
                     var animateGif = $(this).attr("data-animate");
                     $(this).attr("src", animateGif);
