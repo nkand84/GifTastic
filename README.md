@@ -7,5 +7,5 @@ https://developers.giphy.com/
 Link to deployed site:
 https://nkand84.github.io/GifTastic/
 
-![alt text](assets/imgs/Giftastic.png "Giphy API")
+![alt text](assets/images/Giftastic.png "Giphy API")
 
