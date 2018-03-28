@@ -4,4 +4,8 @@ A dynamic webpage that populates with gifs using GIPHY API, Javascript, and Jque
 API used:
 https://developers.giphy.com/
 
+Link to deployed site:
+https://nkand84.github.io/GifTastic/
+
+![alt text](assets/imgs/Giftastic.png "Giphy API")
 
